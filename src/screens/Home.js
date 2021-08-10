@@ -44,13 +44,14 @@ const Home = () => {
                 fontSize:12,
                 color:"#CFCFCF",
                 position: "absolute",
-                top:40,
+                top:25,
                 left:350,
 
             }}>VerTodos</Text>
         </View>
     <CardCategorie></CardCategorie>
     </ScrollView>
+
     <Text style={{
         color:'#4A69FF',
         fontSize:16,
@@ -58,6 +59,11 @@ const Home = () => {
         marginTop:25,
         marginLeft:20
     }}>Explorar categorias</Text>
+   
+    <ScrollView>
+   <Product></Product>
+
+    </ScrollView>
       </ScrollView>
     
   );
@@ -80,7 +86,7 @@ const styles = StyleSheet.create({
         fontSize:16,
         marginLeft:15,
         fontWeight:'bold',
-        marginTop:40,
+        marginTop:25,
         
     
     },

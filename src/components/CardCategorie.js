@@ -55,22 +55,28 @@ export default class CardCategorie extends React.Component {
 }
 const styles = StyleSheet.create({
    container: {
+    flex: 1,
+    width:90,
+    height:60,
     alignItems:"center",
-    flexDirection:"row",
-    backgroundColor:"#86E3CE",
+    flexDirection:"column",
+    backgroundColor:"#4A69FF",
     marginHorizontal:15,
     borderRadius:10,
     paddingVertical:5,
-    paddingHorizontal:15
+    paddingHorizontal:15,
+    opacity: 0.8,
    },
    img:{
-    height:20,width:20
+    height:30,width:30,
+    left:-1,
    },
    title:{
     fontWeight:"bold",
     fontSize:12,
-    paddingLeft:10,
-    color:'#4A69FF'
+    paddingLeft:0,
+    color:'#fff',
+    textAlign: 'center'
    }
 
     
