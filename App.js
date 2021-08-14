@@ -1,12 +1,11 @@
 import * as React from 'react';
-import Home from './src/screens/Home';
-import Product from './src/components/Product'
+import Carrito from './src/screens/Carrito'
 import { ScrollView } from 'react-native-gesture-handler'
+
 
 const App = () => {
   return (
-  <Home></Home>
-
+    <Carrito></Carrito>
   );
 };
 
