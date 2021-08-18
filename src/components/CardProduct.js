@@ -1,9 +1,10 @@
-import React from 'react';
-import {View, Image, Text, StyleSheet} from 'react-native'
+import React from "react";
+import {View, Image, Text, StyleSheet, Alert} from 'react-native'
 import { ScrollView } from 'react-native-gesture-handler'
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import Contador from '../components/Contador'
 export default class CardProduct extends React.Component {
+    
     render(){
         return ( <ScrollView
             horizontal
@@ -16,51 +17,15 @@ export default class CardProduct extends React.Component {
                     style={styles.img}
                    />
                     
-                    <MaterialCommunityIcons  style={styles.icon} name="delete-circle" size={35} color="red" />
-                    <Text style={styles.title}>Big Burger Queso</Text>
+                    <MaterialCommunityIcons onPress={() => Alert.alert('Eliminado')} style={styles.icon} name="delete-circle" size={35} color="red" />
+                    <Text  style={styles.title} >Big Burguer Queso</Text>
                     <Text style={styles.subtitle}>Lorem ipsum dolor sit amet,</Text>
                     <Text style={styles.price}>$12.58</Text>
                     <Contador style={styles.contador}></Contador>
                   
                </View>
 
-               <View style={styles.container}>
-                   <Image
-                    source={require('../images/10.png')}
-                    style={styles.img}
-                   />
-                   <MaterialCommunityIcons  style={styles.icon} name="delete-circle" size={35} color="red" />
-                   <Text style={styles.title}>Big Burger Queso</Text>
-                   <Text style={styles.subtitle}>Lorem ipsum dolor sit amet,</Text>
-                    <Text style={styles.price}>$12.58</Text>
-                    <Contador style={styles.contador}></Contador>
-                   
-               </View>
-
-               <View style={styles.container}>
-                   <Image
-                    source={require('../images/7.png')}
-                    style={styles.img}
-                   />
-                   <MaterialCommunityIcons  style={styles.icon} name="delete-circle" size={35} color="red" />
-                   <Text style={styles.title}>Big Burger Queso</Text>
-                   <Text style={styles.subtitle}>Lorem ipsum dolor sit amet.</Text>
-                    <Text style={styles.price}>$12.58</Text>
-                    <Contador style={styles.contador}></Contador>
-                   
-               </View>
-
-               <View style={styles.container}>
-                   <Image
-                    source={require('../images/6.png')}
-                    style={styles.img}
-                   />
-                   <MaterialCommunityIcons  style={styles.icon} name="delete-circle" size={35} color="red" />
-                   <Text style={styles.title}>Big Burger Queso</Text>
-                   <Text style={styles.subtitle}>Adipisicing elit. Animi,</Text>
-                    <Text style={styles.price}>$12.58</Text>
-                    <Contador style={styles.contador}></Contador>
-               </View>
+              
         </ScrollView>)
         
     }
