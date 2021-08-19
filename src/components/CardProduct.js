@@ -3,7 +3,7 @@ import {View, Image, Text, StyleSheet, Alert} from 'react-native'
 import { ScrollView } from 'react-native-gesture-handler'
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import Contador from '../components/Contador'
-import datas from '../components/data';
+
 export default class CardProduct extends React.Component {
     constructor(props) {
         super(props);
