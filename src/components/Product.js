@@ -1,87 +1,77 @@
 import React from "react";
-import { View, Image, Text, StyleSheet } from "react-native";
+import { View, Image, Text, StyleSheet, Alert } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import { AntDesign } from "@expo/vector-icons";
 export default class Product extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state ={
+      products: [
+        {
+          Key:1,
+          title:'title',
+          description:'description',
+          price:'$'+12.58,
+          image:''
+        },
+        {
+          Key:2,
+          title:'title',
+          description:'description',
+          price:'$'+12.58,
+        },
+        {
+          Key:3,
+          title:'title',
+          description:'description',
+          price:'$'+12.58,
+          image:''
+        },
+        {
+          Key:4,
+          title:'title',
+          description:'description',
+          price:'$'+12.58,
+          image:''
+        },
+      ],
+    };
+    card =() =>{
+      return this.state.products.map((element) =>{
+        return(
+          <ScrollView
+>
+          <View style={styles.container}>
+            <Image source={require("../images/5.png")} style={styles.img} />
+            <AntDesign style={styles.icon} name="heart" size={20} color="red" />
+            <Text style={styles.title}>{element.title}</Text>
+            <Text style={styles.subtitle}>{element.description}</Text>
+            <Text style={styles.price}>{element.price}</Text>
+            <AntDesign
+             onPress={() => Alert.alert('Eliminado')}
+              style={styles.iconn}
+              name="rightcircleo"
+              size={24}
+              color="#153E73"
+            />
+          </View>
+          </ScrollView>
+  
+        )
+      })
+    }
+  }
+
+ 
   render() {
-    return (
-      <ScrollView
+    return <ScrollView
         horizontal
         showsHorizontalScrollIndicator={false}
         style={{ marginTop: 25 }}
       >
-        <View style={styles.container}>
-          <Image source={require("../images/5.png")} style={styles.img} />
-          <AntDesign style={styles.icon} name="heart" size={20} color="red" />
-          <Text style={styles.title}>Titulo</Text>
-          <Text style={styles.subtitle}>Sub titulo</Text>
-          <Text style={styles.price}>$12.58</Text>
-          <AntDesign
-            style={styles.iconn}
-            name="rightcircleo"
-            size={24}
-            color="#153E73"
-          />
-        </View>
-
-        <View style={styles.container}>
-          <Image source={require("../images/10.png")} style={styles.img} />
-          <AntDesign
-            style={styles.icon}
-            name="hearto"
-            size={20}
-            color="black"
-          />
-          <Text style={styles.title}>Titulo</Text>
-          <Text style={styles.subtitle}>Sub titulo</Text>
-          <Text style={styles.price}>$12.58</Text>
-          <AntDesign
-            style={styles.iconn}
-            name="rightcircleo"
-            size={24}
-            color="#153E73"
-          />
-        </View>
-
-        <View style={styles.container}>
-          <Image source={require("../images/7.png")} style={styles.img} />
-          <AntDesign
-            style={styles.icon}
-            name="hearto"
-            size={20}
-            color="black"
-          />
-          <Text style={styles.title}>Titulo</Text>
-          <Text style={styles.subtitle}>Sub titulo</Text>
-          <Text style={styles.price}>$12.58</Text>
-          <AntDesign
-            style={styles.iconn}
-            name="rightcircleo"
-            size={24}
-            color="#153E73"
-          />
-        </View>
-
-        <View style={styles.container}>
-          <Image source={require("../images/6.png")} style={styles.img} />
-          <AntDesign
-            style={styles.icon}
-            name="hearto"
-            size={20}
-            color="black"
-          />
-          <Text style={styles.title}>Titulo</Text>
-          <Text style={styles.subtitle}>Sub titulo</Text>
-          <Text style={styles.price}>$12.58</Text>
-          <AntDesign
-            style={styles.iconn}
-            name="rightcircleo"
-            size={24}
-            color="#153E73"
-          />
-        </View>
+       {card()}
       </ScrollView>
-    );
+    
   }
 }
 const styles = StyleSheet.create({
@@ -120,21 +110,21 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     fontSize: 12,
     marginTop: 130,
-    marginLeft: -150,
+    marginLeft: -145,
     color: "#515F65",
   },
   subtitle: {
     fontWeight: "bold",
     fontSize: 10,
     marginTop: 150,
-    marginLeft: -30,
+    marginLeft: -20,
     color: "#515F65",
   },
   price: {
     fontWeight: "bold",
     fontSize: 12,
     marginTop: 170,
-    marginLeft: -40,
+    marginLeft: -50,
     color: "#4A69FF",
   },
   icon: {
